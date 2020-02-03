@@ -1,4 +1,5 @@
 ## QUESTION 1
+require 'pry'
 
 pokemon = [
   {
@@ -67,3 +68,18 @@ pokemon = [
 # How would you return an array of all of the pokemon's names?
 # How would you determine whether or not the pokemon array contained any pokemon with a weight greater than 60?
 #  whatever method you use should return true if there are any such pokemon, false if not.
+
+bulb = pokemon.find {|pokemon| pokemon[:name] == "bulbasaur"}
+puts bulb[:abilities][0][:ability][:url]
+
+
+pokemon.find {|pokemon| pokemon[:base_experience] > 40}
+
+pokemon.select {|pokemon| pokemon[:base_experience] > 40}
+
+pokemon.map {|pokemon| pokemon[:name]}
+
+x = pokemon.map {|pokemon| pokemon[:weight]}
+x.any? {|x| x>60}
+binding.pry
+
